@@ -1,6 +1,6 @@
 {
   "name": "point-line-distance",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "3-dimensional point line distance",
   "bugs": "https://github.com/maurizzzio/point-line-distance/issues",
   "license": "MIT",
