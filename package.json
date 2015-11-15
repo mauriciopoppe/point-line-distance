@@ -1,0 +1,41 @@
+{
+  "name": "point-line-distance",
+  "version": "0.1.0",
+  "description": "3-dimensional point line distance",
+  "bugs": "https://github.com/maurizzzio/point-line-distance/issues",
+  "license": "MIT",
+  "main": "index.js",
+  "author": "Mauricio Poppe <mauricio.poppe@gmail.com>",
+  "files": [
+    "index.js",
+    "squared.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maurizzzio/point-line-distance"
+  },
+  "keywords": [
+    "point-line-distance",
+    "line",
+    "point",
+    "distance",
+    "point-line",
+    "3d",
+    "geometry"
+  ],
+  "dependencies": {
+    "gl-vec3": "^1.0.3"
+  },
+  "devDependencies": {
+    "tape": "^4.0.1",
+    "tap-spec": "^4.0.2",
+    "gaze-cli": "^0.2.0",
+    "standard": "^4.5.0"
+  },
+  "scripts": {
+    "lint": "standard",
+    "test": "node test/index.js | tap-spec",
+    "test:watch": "gaze 'npm test' 'test/**/*.js' 'lib/**/*.js' 'index.js'",
+    "start": "npm run test:watch"
+  }
+}
