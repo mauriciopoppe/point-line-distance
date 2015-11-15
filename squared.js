@@ -1,17 +1,23 @@
-var vec3 = require('gl-vec3')
-var ab = vec3.create()
-var ap = vec3.create()
-var cross = vec3.create()
+var subtract = require('gl-vec3/subtract')
+var cross = require('gl-vec3/cross')
+var squaredLength = require('gl-vec3/squaredLength')
+var ab = []
+var ap = []
+var cr = []
 
 module.exports = function (p, a, b) {
   // // == vector solution
+  // var normalize = require('gl-vec3/normalize')
+  // var scaleAndAdd = require('gl-vec3/scaleAndAdd')
+  // var dot = require('gl-vec3/dot')
+  // var squaredDistance = require('gl-vec3/squaredDistance')
   // // n = vector `ab` normalized
-  // var n = vec3.create()
+  // var n = []
   // // projection = projection of `point` on `n`
-  // var projection = vec3.create()
-  // vec3.normalize(n, vec3.subtract(n, a, b))
-  // vec3.scaleAndAdd(projection, a, n, vec3.dot(n, p))
-  // return vec3.squaredDistance(projection, p)
+  // var projection = []
+  // normalize(n, subtract(n, a, b))
+  // scaleAndAdd(projection, a, n, dot(n, p))
+  // return squaredDistance(projection, p)
 
   // == parallelogram solution
   //
@@ -27,10 +33,10 @@ module.exports = function (p, a, b) {
   //  |ap x s| = s * h
   //  h = |ap x s| / s
   //
-  vec3.subtract(ab, b, a)
-  vec3.subtract(ap, p, a)
-  var area = vec3.squaredLength(vec3.cross(cross, ap, ab))
-  var s = vec3.squaredLength(ab)
+  subtract(ab, b, a)
+  subtract(ap, p, a)
+  var area = squaredLength(cross(cr, ap, ab))
+  var s = squaredLength(ab)
   if (s === 0) {
     throw Error('a and b are the same point')
   }
