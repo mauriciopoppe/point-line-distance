@@ -5,7 +5,7 @@
   "bugs": "https://github.com/maurizzzio/point-line-distance/issues",
   "license": "MIT",
   "main": "index.js",
-  "author": "Mauricio Poppe <mauricio.poppe@gmail.com>",
+  "author": "Mauricio Poppe",
   "files": [
     "index.js",
     "squared.js"
